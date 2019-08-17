@@ -11,6 +11,9 @@
 		F327D662230850CD0066632F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D661230850CD0066632F /* ViewController.swift */; };
 		F327D664230850CF0066632F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F327D663230850CF0066632F /* Assets.xcassets */; };
 		F327D667230850CF0066632F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F327D665230850CF0066632F /* Main.storyboard */; };
+		F327D670230857A00066632F /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D66F230857A00066632F /* QuotesViewController.swift */; };
+		F327D67223085AC00066632F /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D67123085AC00066632F /* Quote.swift */; };
+		F327D67423085DD00066632F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D67323085DD00066632F /* EventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		F327D666230850CF0066632F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F327D668230850CF0066632F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F327D669230850CF0066632F /* NetworkChecker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkChecker.entitlements; sourceTree = "<group>"; };
+		F327D66F230857A00066632F /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		F327D67123085AC00066632F /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		F327D67323085DD00066632F /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				F327D665230850CF0066632F /* Main.storyboard */,
 				F327D668230850CF0066632F /* Info.plist */,
 				F327D669230850CF0066632F /* NetworkChecker.entitlements */,
+				F327D66F230857A00066632F /* QuotesViewController.swift */,
+				F327D67323085DD00066632F /* EventMonitor.swift */,
+				F327D67123085AC00066632F /* Quote.swift */,
 			);
 			path = NetworkChecker;
 			sourceTree = "<group>";
@@ -133,7 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F327D67223085AC00066632F /* Quote.swift in Sources */,
+				F327D67423085DD00066632F /* EventMonitor.swift in Sources */,
 				F327D662230850CD0066632F /* ViewController.swift in Sources */,
+				F327D670230857A00066632F /* QuotesViewController.swift in Sources */,
 				F327D660230850CD0066632F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
