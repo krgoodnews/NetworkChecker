@@ -9,6 +9,12 @@
 
 코드가 저의 결백을 증명할 것입니다.
 
+## Installation
+
+1. [다운로드](https://github.com/krgoodnews/NetworkChecker/raw/master/myfi0.1.dmg)
+2. 실행하면 나오는 파일을 응용 프로그램(/Applications) 폴더에 드래그해 저장합니다.
+3. 끝
+
 ## Features
 
 - 우측 상단 메뉴바에 연결된 와이파이 이름을 보여줍니다.
