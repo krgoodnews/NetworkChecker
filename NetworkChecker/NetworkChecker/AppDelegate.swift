@@ -13,7 +13,7 @@ import CoreWLAN
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   var ssid: String {
-    return CWWiFiClient.shared().interface(withName: nil)?.ssid() ?? ""
+    return CWWiFiClient.shared().interface(withName: nil)?.ssid() ?? "What is?"
   }
 
   let popover = NSPopover()
@@ -23,10 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    if let button = statusItem.button {
-      button.title = ssid
-      button.action = #selector(togglePopover(_:))
-    }
+    setWifiStatus()
 
     constructMenu()
 
@@ -36,6 +33,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         strongSelf.closePopover(sender: event)
       }
     }
+
+    Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setWifiStatus), userInfo: nil, repeats: true)
+  }
+
+  /// Wifi 정보를 StatusItem에 보여준다
+  @objc private func setWifiStatus() {
+    guard let button = statusItem.button else {
+      return
+    }
+
+    button.title = ssid
+    button.contentTintColor = ssid == "wadiz guest free" ? .danger : nil
+    button.action = #selector(togglePopover(_:))
+
+    print(ssid)
   }
 
   @objc
@@ -61,18 +73,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   @objc
-  private func printQuote(_ sender: Any?) {
-    print("popover")
-    popover.contentViewController = QuotesViewController.freshController()
+  private func didTapAboutDeveloper(_ sender: Any?) {
+    popover.contentViewController = AboutDeveloperVC.freshController()
     showPopover(sender: sender)
   }
 
   private func constructMenu() {
     let menu = NSMenu()
 
-    menu.addItem(NSMenuItem(title: "SSID: \(ssid)", action: #selector(AppDelegate.printQuote(_:)), keyEquivalent: "P"))
+    menu.addItem(NSMenuItem(title: "개발자 정보", action: #selector(AppDelegate.didTapAboutDeveloper(_:)), keyEquivalent: ""))
     menu.addItem(NSMenuItem.separator())
-    menu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+    menu.addItem(NSMenuItem(title: "종료", action: #selector(NSApplication.terminate(_:)), keyEquivalent: ""))
 
     statusItem.menu = menu
   }

@@ -680,76 +680,60 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Quotes View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--About DeveloperVC-->
+        <scene sceneID="bFO-BD-kmN">
             <objects>
-                <viewController storyboardIdentifier="QuotesViewController" id="XfG-lQ-9wD" customClass="QuotesViewController" customModule="NetworkChecker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController storyboardIdentifier="AboutDeveloperVC" id="2Qi-qA-nFD" customClass="AboutDeveloperVC" customModule="NetworkChecker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="bit-Yy-kfT">
+                        <rect key="frame" x="0.0" y="0.0" width="285" height="135"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UIJ-ny-EjO">
-                                <rect key="frame" x="14" y="118" width="45" height="32"/>
-                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oRv-x8-808">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="previous:" target="XfG-lQ-9wD" id="auT-hE-Zjp"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sHv-GP-quF">
-                                <rect key="frame" x="421" y="118" width="45" height="32"/>
-                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Fam-XV-aQB">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="next:" target="XfG-lQ-9wD" id="eeU-Ln-qq9"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rOb-Xf-9Zy">
-                                <rect key="frame" x="207" y="13" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ItO-FB-Wls">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="quit:" target="XfG-lQ-9wD" id="1IY-pj-oRb"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="acM-FW-czZ">
-                                <rect key="frame" x="71" y="127" width="338" height="17"/>
-                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Multiline Label" id="NeD-uQ-gPy">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-Q4-9s0">
+                                <rect key="frame" x="212" y="104" width="53" height="11"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="appVersion" id="8me-Vv-A4L">
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="JMg-13-gPd">
+                                <rect key="frame" x="18" y="61" width="249" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="개발자: Yunsu Guk" id="Jjf-vi-RSI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kjX-ef-uNh">
+                                <rect key="frame" x="81" y="13" width="123" height="32"/>
+                                <buttonCell key="cell" type="push" title="개발자 웹사이트" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="owe-fo-w8f">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapWebSite:" target="2Qi-qA-nFD" id="Tqm-Bk-i16"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sHv-GP-quF" secondAttribute="trailing" constant="20" id="D2S-ik-5VL"/>
-                            <constraint firstItem="acM-FW-czZ" firstAttribute="leading" secondItem="UIJ-ny-EjO" secondAttribute="trailing" constant="20" id="Ims-7k-xsf"/>
-                            <constraint firstItem="UIJ-ny-EjO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="K81-Jy-xNc"/>
-                            <constraint firstAttribute="bottom" secondItem="rOb-Xf-9Zy" secondAttribute="bottom" constant="20" id="OkY-nA-Rfh"/>
-                            <constraint firstItem="rOb-Xf-9Zy" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Rz5-p6-DV5"/>
-                            <constraint firstItem="UIJ-ny-EjO" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="UHx-Or-Fvz"/>
-                            <constraint firstItem="acM-FW-czZ" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="XYc-5v-Oq8"/>
-                            <constraint firstItem="sHv-GP-quF" firstAttribute="leading" secondItem="acM-FW-czZ" secondAttribute="trailing" constant="20" id="kne-zq-mC6"/>
-                            <constraint firstItem="sHv-GP-quF" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="qQ9-QR-MYB"/>
+                            <constraint firstItem="kjX-ef-uNh" firstAttribute="top" relation="lessThanOrEqual" secondItem="JMg-13-gPd" secondAttribute="bottom" constant="20" id="E7X-G5-xTp"/>
+                            <constraint firstItem="kjX-ef-uNh" firstAttribute="centerX" secondItem="bit-Yy-kfT" secondAttribute="centerX" id="FEG-1j-7w3"/>
+                            <constraint firstAttribute="bottom" secondItem="kjX-ef-uNh" secondAttribute="bottom" constant="20" id="T39-jb-Sgz"/>
+                            <constraint firstItem="JMg-13-gPd" firstAttribute="width" secondItem="bit-Yy-kfT" secondAttribute="width" constant="-40" id="T7y-iQ-uOG"/>
+                            <constraint firstAttribute="trailing" secondItem="Wmj-Q4-9s0" secondAttribute="trailing" constant="22" id="a60-BQ-mdv"/>
+                            <constraint firstItem="Wmj-Q4-9s0" firstAttribute="top" secondItem="bit-Yy-kfT" secondAttribute="top" constant="20" id="djw-j3-1ej"/>
+                            <constraint firstItem="JMg-13-gPd" firstAttribute="centerX" secondItem="bit-Yy-kfT" secondAttribute="centerX" id="euB-lV-kgT"/>
+                            <constraint firstItem="JMg-13-gPd" firstAttribute="top" relation="lessThanOrEqual" secondItem="Wmj-Q4-9s0" secondAttribute="bottom" constant="26" id="gri-P8-etf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textLabel" destination="acM-FW-czZ" id="2kP-Q1-yCK"/>
+                        <outlet property="appVersionLabel" destination="Wmj-Q4-9s0" id="2rZ-k7-vRq"/>
+                        <outlet property="developerInfoLabel" destination="JMg-13-gPd" id="OhS-ch-VA9"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="eyc-m2-ALU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="249.5" y="506"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="NSGoLeftTemplate" width="9" height="12"/>
-        <image name="NSGoRightTemplate" width="9" height="12"/>
-    </resources>
 </document>
