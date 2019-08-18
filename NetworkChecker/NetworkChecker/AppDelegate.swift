@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       return
     }
 
-    button.title = ssid
+    button.title = ssid.replace(target: "wadiz ", withString: "")
     button.contentTintColor = ssid == "wadiz guest free" ? .danger : nil
     button.action = #selector(togglePopover(_:))
 
