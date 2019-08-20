@@ -78,11 +78,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     showPopover(sender: sender)
   }
 
+  @objc
+  private func didTapEditName(_ sender: Any?) {
+    popover.contentViewController = EditNameTableVC.freshController()
+    showPopover(sender: sender)
+  }
+
   private func constructMenu() {
     let menu = NSMenu()
 
-    menu.addItem(NSMenuItem(title: "개발자 정보", action: #selector(AppDelegate.didTapAboutDeveloper(_:)), keyEquivalent: ""))
+    menu.addItem(NSMenuItem(title: "환경설정", action: #selector(AppDelegate.didTapEditName(_:)), keyEquivalent: ""))
     menu.addItem(NSMenuItem.separator())
+    menu.addItem(NSMenuItem(title: "개발자 정보", action: #selector(AppDelegate.didTapAboutDeveloper(_:)), keyEquivalent: ""))
     menu.addItem(NSMenuItem(title: "종료", action: #selector(NSApplication.terminate(_:)), keyEquivalent: ""))
 
     statusItem.menu = menu
