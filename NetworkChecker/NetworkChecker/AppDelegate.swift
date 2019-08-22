@@ -7,14 +7,9 @@
 //
 
 import Cocoa
-import CoreWLAN
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-  var ssid: String {
-    return CWWiFiClient.shared().interface(withName: nil)?.ssid() ?? "What is?"
-  }
 
   let popover = NSPopover()
 
@@ -43,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       return
     }
 
+    let ssid = NetworkModel.currentSSID
     button.title = ssid.replace(target: "wadiz ", withString: "")
     button.contentTintColor = ssid == "wadiz guest free" ? .danger : nil
     button.action = #selector(togglePopover(_:))

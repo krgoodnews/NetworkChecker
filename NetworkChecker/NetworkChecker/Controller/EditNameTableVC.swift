@@ -26,15 +26,52 @@ class EditNameTableVC: NSViewController {
   }
 
   @IBAction func didClickAdd(_ sender: NSButton) {
-    let network = NetworkModel(ssid: "WIFI NAME", customName: "CUSTOM")
-    networks.append(network)
+    networks.append(NetworkModel(customName: ""))
   }
 }
 
 extension EditNameTableVC: NSTableViewDelegate, NSTableViewDataSource {
 
+  fileprivate enum CellType {
+    case ssid, name
+
+    var cellID: String {
+      switch self {
+      case .ssid:
+        return "SSIDCellID"
+      case .name:
+        return "NameCellID"
+      }
+    }
+  }
   func numberOfRows(in tableView: NSTableView) -> Int {
     return networks.count
+  }
+
+  func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+
+    var cellType: CellType
+
+    if tableColumn == tableView.tableColumns[0] {
+      cellType = .ssid
+    } else {
+      cellType = .name
+    }
+
+    guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellType.cellID),
+                                        owner: nil) as? NSTableCellView else {
+      return nil
+    }
+
+    switch cellType {
+    case .ssid:
+      cell.textField?.stringValue = "\(cellType) \(row)"
+    case .name:
+      cell.textField?.isEditable = true
+      cell.textField?.placeholderString = "\(cellType) \(row)"
+    }
+
+    return cell
   }
 
 }
