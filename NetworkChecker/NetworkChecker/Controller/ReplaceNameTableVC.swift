@@ -1,5 +1,5 @@
 //
-//  EditNameTableVC.swift
+//  ReplaceNameTableVC
 //  NetworkChecker
 //
 //  Created by 국윤수 on 19/08/2019.
@@ -8,29 +8,40 @@
 
 import Cocoa
 
-class EditNameTableVC: NSViewController {
+final class ReplaceNameTableVC: NSViewController {
 
-  var networks: [NetworkModel] = [] {
-    didSet {
-      tableView.reloadData()
-    }
-  }
+  // MARK: - View Model
+  let viewModel = ReplaceNameViewModel()
 
+  // MARK: - View
   @IBOutlet weak var tableView: NSTableView!
+
+  // MARK: - Methods
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    setupTableView()
+    setupViewModelObserver()
+  }
+
+  private func setupTableView() {
     tableView.delegate = self
     tableView.dataSource = self
   }
 
+  private func setupViewModelObserver() {
+    viewModel.bindableNames.bind { [unowned self] names in
+      self.tableView.reloadData()
+    }
+  }
+
   @IBAction func didClickAdd(_ sender: NSButton) {
-    networks.append(NetworkModel(customName: ""))
+    viewModel.didClickAdd()
   }
 }
 
-extension EditNameTableVC: NSTableViewDelegate, NSTableViewDataSource {
+extension ReplaceNameTableVC: NSTableViewDelegate, NSTableViewDataSource {
 
   fileprivate enum CellType {
     case ssid, name
@@ -44,8 +55,9 @@ extension EditNameTableVC: NSTableViewDelegate, NSTableViewDataSource {
       }
     }
   }
+
   func numberOfRows(in tableView: NSTableView) -> Int {
-    return networks.count
+    return viewModel.bindableNames.value?.count ?? 0
   }
 
   func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -63,12 +75,15 @@ extension EditNameTableVC: NSTableViewDelegate, NSTableViewDataSource {
       return nil
     }
 
+    guard let replaceName = viewModel.bindableNames.value?[row] else { return nil }
+
     switch cellType {
     case .ssid:
-      cell.textField?.stringValue = "\(cellType) \(row)"
+      cell.textField?.stringValue = replaceName.originalName
     case .name:
       cell.textField?.isEditable = true
-      cell.textField?.placeholderString = "\(cellType) \(row)"
+      cell.textField?.placeholderString = replaceName.originalName
+      cell.textField?.stringValue = replaceName.visibleName ?? ""
     }
 
     return cell
@@ -76,16 +91,15 @@ extension EditNameTableVC: NSTableViewDelegate, NSTableViewDataSource {
 
 }
 
-extension EditNameTableVC {
+extension ReplaceNameTableVC {
   /// Storyboard instantiation
-  static func freshController() -> EditNameTableVC {
+  static func freshController() -> ReplaceNameTableVC {
     let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
 
-    let identifier = NSStoryboard.SceneIdentifier("EditNameTableVC")
-    guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? EditNameTableVC else {
+    let identifier = NSStoryboard.SceneIdentifier("ReplaceNameTableVC")
+    guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ReplaceNameTableVC else {
       fatalError("Why cant i find EditNameTableVC? - Check Main.storyboard")
     }
     return viewcontroller
   }
 }
-

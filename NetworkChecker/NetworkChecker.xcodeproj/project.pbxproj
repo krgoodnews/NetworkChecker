@@ -13,9 +13,13 @@
 		F327D67423085DD00066632F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D67323085DD00066632F /* EventMonitor.swift */; };
 		F327D6772308895F0066632F /* AboutDeveloperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D6752308895F0066632F /* AboutDeveloperVC.swift */; };
 		F327D67C2308E4C20066632F /* NSColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327D67B2308E4C20066632F /* NSColor+.swift */; };
+		F39EE12923101B3D004982D4 /* ReplaceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39EE12823101B3D004982D4 /* ReplaceName.swift */; };
+		F39EE12C23101DC3004982D4 /* ReplaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39EE12B23101DC3004982D4 /* ReplaceViewModel.swift */; };
+		F39EE12E23101F34004982D4 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39EE12D23101F34004982D4 /* Bindable.swift */; };
+		F39EE13023102B6B004982D4 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39EE12F23102B6B004982D4 /* Bool+.swift */; };
 		F3E3F38D23099D1E007077E9 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3F38C23099D1E007077E9 /* String+.swift */; };
-		F3E3F38F230AD7B7007077E9 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3F38E230AD7B7007077E9 /* NetworkModel.swift */; };
-		F3E3F391230AD8B3007077E9 /* EditNameTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3F390230AD8B3007077E9 /* EditNameTableVC.swift */; };
+		F3E3F38F230AD7B7007077E9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3F38E230AD7B7007077E9 /* Network.swift */; };
+		F3E3F391230AD8B3007077E9 /* ReplaceNameTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E3F390230AD8B3007077E9 /* ReplaceNameTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +32,13 @@
 		F327D67323085DD00066632F /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		F327D6752308895F0066632F /* AboutDeveloperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDeveloperVC.swift; sourceTree = "<group>"; };
 		F327D67B2308E4C20066632F /* NSColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+.swift"; sourceTree = "<group>"; };
+		F39EE12823101B3D004982D4 /* ReplaceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceName.swift; sourceTree = "<group>"; };
+		F39EE12B23101DC3004982D4 /* ReplaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceViewModel.swift; sourceTree = "<group>"; };
+		F39EE12D23101F34004982D4 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		F39EE12F23102B6B004982D4 /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+.swift"; sourceTree = "<group>"; };
 		F3E3F38C23099D1E007077E9 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		F3E3F38E230AD7B7007077E9 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
-		F3E3F390230AD8B3007077E9 /* EditNameTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameTableVC.swift; sourceTree = "<group>"; };
+		F3E3F38E230AD7B7007077E9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F3E3F390230AD8B3007077E9 /* ReplaceNameTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceNameTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,15 +71,16 @@
 		F327D65E230850CD0066632F /* NetworkChecker */ = {
 			isa = PBXGroup;
 			children = (
+				F39EE12723101A7A004982D4 /* Model */,
+				F39EE12A23101DB0004982D4 /* ViewModel */,
+				F327D67923088F000066632F /* Controller */,
 				F327D67A2308E4B20066632F /* Extension */,
 				F327D668230850CF0066632F /* Info.plist */,
 				F327D65F230850CD0066632F /* AppDelegate.swift */,
 				F327D665230850CF0066632F /* Main.storyboard */,
-				F327D67923088F000066632F /* Controller */,
 				F327D663230850CF0066632F /* Assets.xcassets */,
 				F327D669230850CF0066632F /* NetworkChecker.entitlements */,
 				F327D67323085DD00066632F /* EventMonitor.swift */,
-				F3E3F38E230AD7B7007077E9 /* NetworkModel.swift */,
 			);
 			path = NetworkChecker;
 			sourceTree = "<group>";
@@ -80,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F327D6752308895F0066632F /* AboutDeveloperVC.swift */,
-				F3E3F390230AD8B3007077E9 /* EditNameTableVC.swift */,
+				F3E3F390230AD8B3007077E9 /* ReplaceNameTableVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,8 +99,27 @@
 			children = (
 				F327D67B2308E4C20066632F /* NSColor+.swift */,
 				F3E3F38C23099D1E007077E9 /* String+.swift */,
+				F39EE12F23102B6B004982D4 /* Bool+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F39EE12723101A7A004982D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3E3F38E230AD7B7007077E9 /* Network.swift */,
+				F39EE12823101B3D004982D4 /* ReplaceName.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F39EE12A23101DB0004982D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F39EE12D23101F34004982D4 /* Bindable.swift */,
+				F39EE12B23101DC3004982D4 /* ReplaceViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E3F391230AD8B3007077E9 /* EditNameTableVC.swift in Sources */,
-				F3E3F38F230AD7B7007077E9 /* NetworkModel.swift in Sources */,
+				F39EE12E23101F34004982D4 /* Bindable.swift in Sources */,
+				F3E3F391230AD8B3007077E9 /* ReplaceNameTableVC.swift in Sources */,
+				F39EE13023102B6B004982D4 /* Bool+.swift in Sources */,
+				F39EE12923101B3D004982D4 /* ReplaceName.swift in Sources */,
+				F39EE12C23101DC3004982D4 /* ReplaceViewModel.swift in Sources */,
+				F3E3F38F230AD7B7007077E9 /* Network.swift in Sources */,
 				F327D67423085DD00066632F /* EventMonitor.swift in Sources */,
 				F327D67C2308E4C20066632F /* NSColor+.swift in Sources */,
 				F3E3F38D23099D1E007077E9 /* String+.swift in Sources */,

@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       return
     }
 
-    let ssid = NetworkModel.currentSSID
+    let ssid = Network.currentSSID
     button.title = ssid.replace(target: "wadiz ", withString: "")
     button.contentTintColor = ssid == "wadiz guest free" ? .danger : nil
     button.action = #selector(togglePopover(_:))
@@ -76,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   @objc
   private func didTapEditName(_ sender: Any?) {
-    popover.contentViewController = EditNameTableVC.freshController()
+    popover.contentViewController = ReplaceNameTableVC.freshController()
     showPopover(sender: sender)
   }
 
