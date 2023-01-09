@@ -55,7 +55,9 @@
 ## Authors
 
 Yunsu Guk [개인 웹사이트](https://yunsu.dev)
+
 krgoodnews@gmail.com
+
 기능 제안, 피드백 등 매우 환영합니다.
 
 ## License
